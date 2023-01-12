@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#myquilleditor{
+    min-height: 56vh;
+    margin-bottom: 0.75rem;
+}
+
+.codelover-arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.header-popup.active .codelover-arrow,
+.header-popup.active .popup-back-glass,
+.header-popup.active ~ .header-pop-content {
+    display: block;
+}
