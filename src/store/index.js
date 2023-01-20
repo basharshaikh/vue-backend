@@ -9,6 +9,10 @@ const store = createStore({
             data: {},
             token: sessionStorage.getItem('TOKEN')
         },
+        userData: {
+            name: '',
+            email: ''
+        },
         notification: {
             show: false,
             type: '',
@@ -29,10 +33,14 @@ const store = createStore({
     getters: {},
     actions,
     mutations: {
+
         activeMedia: (state, {id, active, url}) => {
             state.mediaLibrary.active = active
             state.mediaLibrary.id = id
             state.mediaLibrary.url = url
+        },
+        setUserData: (state, userData) => {
+            state.userData = userData
         },
         setUser: (state, userData) => {
             state.user.token = userData.token;
