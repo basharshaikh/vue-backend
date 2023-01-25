@@ -38,19 +38,19 @@
 
                 <div>
                     <FieldLabel text="Full Name"/>
-                    <input v-model="user.name" type="text" :class="DefaultClass.class.inputField" placeholder="User full name" />
+                    <input v-model="user.name" type="text" class="vbc-input-field" placeholder="User full name" />
                 </div>
                 <div>
                     <FieldLabel text="Email"/>
-                    <input v-model="user.email" type="email" :class="DefaultClass.class.inputField" placeholder="User email" />
+                    <input v-model="user.email" type="email" class="vbc-input-field" placeholder="User email" />
                 </div>
                 <div>
                     <FieldLabel text="Password"/>
-                    <input v-model="user.password" type="password" :class="DefaultClass.class.inputField" placeholder="User password" />
+                    <input v-model="user.password" type="password" class="vbc-input-field" placeholder="User password" />
                 </div>
                 <div>
                     <FieldLabel text="Confirm Password"/>
-                    <input v-model="user.password_confirmation" type="password" :class="DefaultClass.class.inputField" placeholder="Confirm password" />
+                    <input v-model="user.password_confirmation" type="password" class="vbc-input-field" placeholder="Confirm password" />
                 </div>
 
                 <SLButton @click="SubmitUser" />
@@ -67,8 +67,6 @@ import Heading from '../../_partials/Heading.vue';
 import EditIcon from '../../_icons/EditIcon.vue';
 import DeleteIcon from '../../_icons/DeleteIcon.vue';
 import FieldLabel from '../../_partials/FieldLabel.vue';
-import Alert from '../../_partials/Alert.vue';
-import DefaultClass from '../../_partials/DefaultClass.vue';
 import SLButton from '../../_partials/SLButton.vue';
 import InfiniteLoading from '../../_icons/InfiniteLoading.vue';
 

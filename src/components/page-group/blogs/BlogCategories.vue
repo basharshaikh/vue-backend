@@ -20,12 +20,12 @@
           <div class="-space-y-px">
             <div>
               <FieldLabel text="blog title"/>
-              <input v-model="cat.title" name="title" type="text" :class="DefaultClass.class.inputField" placeholder="Category title" />
+              <input v-model="cat.title" name="title" type="text" class="vbc-input-field" placeholder="Category title" />
             </div>
 
             <div>
               <FieldLabel text="Category Description"/>
-              <textarea v-model="cat.description" name="description" cols="30" rows="10" :class="DefaultClass.class.inputField" placeholder="Category Description"></textarea>
+              <textarea v-model="cat.description" name="description" cols="30" rows="10" class="vbc-input-field" placeholder="Category Description"></textarea>
             </div>
 
             <SLButton :loading="loading"/>
@@ -60,7 +60,6 @@
 </template>
 
 <script setup>
-import DefaultClass from '../../_partials/DefaultClass.vue';
 import FieldLabel from '../../_partials/FieldLabel.vue';
 import SLButton from '../../_partials/SLButton.vue';
 import DeleteIcon from '../../_icons/DeleteIcon.vue';

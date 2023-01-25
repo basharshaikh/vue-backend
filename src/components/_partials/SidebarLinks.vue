@@ -4,10 +4,6 @@
     
     <!-- Dashboard -->
     <div>
-        <h3 class="text-xs uppercase text-slate-500 font-semibold pl-3">                           
-            <span class="">Pages</span>
-        </h3>
-
         <ul class="mt-3">
             <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 bg-slate-900">
                 <a @click.prevent="activeDash = !activeDash" href="">

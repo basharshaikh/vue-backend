@@ -78,7 +78,7 @@ const userData = ref({
 store.dispatch("getCurrentUser")
 .then((res) => {
     userData.value = res.data.user
-    store.commit("setUserData", res.data.user.data)
+    store.commit("setUserData", res.data.user)
 })
 
 

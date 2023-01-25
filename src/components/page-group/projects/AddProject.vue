@@ -22,7 +22,7 @@
           <div class=" -space-y-px">
             <div>
               <FieldLabel text="Project title" />
-              <input v-model="project.title" type="text" :class="DefaultClass.class.inputField" placeholder="Project title" />
+              <input v-model="project.title" type="text" class="vbc-input-field" placeholder="Project title" />
             </div>
 
             <div class="pt-3" v-if="!loading">
@@ -32,12 +32,12 @@
     
             <div class="pt-3">              
               <FieldLabel text="Project Excerpt" />
-              <textarea v-model="project.excerpt" cols="30" rows="10" :class="DefaultClass.class.inputField" placeholder="Proejct excerpt"></textarea>
+              <textarea v-model="project.excerpt" cols="30" rows="10" class="vbc-input-field" placeholder="Proejct excerpt"></textarea>
             </div>
 
             <div  class="pt-3">
               <FieldLabel text="Project Label" />
-              <input v-model="project.label" type="text" :class="DefaultClass.class.inputField"  placeholder="Proejct label" />
+              <input v-model="project.label" type="text" class="vbc-input-field"  placeholder="Proejct label" />
             </div>
           </div>
         </div>
@@ -52,9 +52,7 @@
                 <div class="p-3">
                     <div class="w-[60%] inline-block">
                       <div class="inline-block">
-                          <select v-model="project.status"
-                          :class="DefaultClass.class.inputField"
-                          >
+                          <select v-model="project.status" class="vbc-input-field">
                               <option value="publish">Publish</option>
                               <option value="draft">Draft</option>
                           </select>
@@ -87,7 +85,7 @@
                 </div>
                 <div v-for="(ingredient, i) in project.ingredients" class="flex">
                   <ColorPicker :index="i" @changeColor="changeColor" :hexCode="ingredient.color"/>
-                  <input v-model="project.ingredients[i].text" type="text" :class="DefaultClass.class.inputField" placeholder="ingredient" />
+                  <input v-model="project.ingredients[i].text" type="text" class="vbc-input-field" placeholder="ingredient" />
 
                   <!-- add ingre -->
                   <button type="button" class="bg-blue-900 p-2 px-3 inline-block h-[41px] relative -top-[1px] border rounded-sm cursor-pointer">
@@ -128,7 +126,6 @@
 <script setup>
 import { computed, ref } from "vue";
 import store from '../../../store';
-import DefaultClass from '../../_partials/DefaultClass.vue';
 import Alert from '../../_partials/Alert.vue';
 import PlaceholdImg from '../../_icons/PlaceholdImg.vue';
 import { QuillEditor } from '@vueup/vue-quill'
@@ -143,7 +140,6 @@ import Button from "../../_partials/Button.vue";
 import ButtonMedia from "../../_partials/ButtonMedia.vue"
 import SLButton from "../../_partials/SLButton.vue";
 import { useRoute, useRouter } from "vue-router"
-import NoAccess from "../../../views/NoAccess.vue";
 
 const route = useRoute();
 const paramId = route.params.id

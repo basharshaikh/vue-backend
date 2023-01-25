@@ -10,8 +10,12 @@ const store = createStore({
             token: sessionStorage.getItem('TOKEN')
         },
         userData: {
-            name: '',
-            email: ''
+            data: {
+                name: '',
+                email: ''
+            },
+            roles: [],
+            capable: []
         },
         notification: {
             show: false,

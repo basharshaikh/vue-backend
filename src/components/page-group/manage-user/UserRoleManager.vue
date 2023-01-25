@@ -12,7 +12,7 @@
                 <WidgetBox title="Assign role to user" subtitle="You assign multiple role on a user">
                     <div class="assign-role-form">
                         <form action="" class="flex">
-                            <select @change="userFieldChanged" v-model="assignRole.userID" :class="DefaultClass.class.inputField" class="w-[50%] ">
+                            <select @change="userFieldChanged" v-model="assignRole.userID" class="vbc-input-field w-[50%]">
                                 <option value="">Select User</option>
                                 <option v-for="(user, ind) in Users" :value="user.id">{{user.email}}</option>
                             </select>
@@ -33,10 +33,9 @@
                             <input 
                                 @change="getRoleInfo" 
                                 name="roleCheckbox" 
-                                class="cursor-pointer"
+                                class="cursor-pointer vbc-input-field"
                                 type="checkbox" 
                                 :value="role.id" 
-                                :class="DefaultClass.class.checkboxField"
                                 :data-role-name="role.name"
                                 :checked="checkedOldRole(role.id)"
                             >
@@ -50,7 +49,7 @@
                 <WidgetBox title="Assign capabilites in role" subtitle="You assign multiple capabities / parmissions in a role">
                     <div class="assign-role-form">
                         <form action="" class="flex">
-                            <select @change="roleFielsChanged" v-model="assignCap.roleID" :class="DefaultClass.class.inputField" class="w-[50%] ">
+                            <select @change="roleFielsChanged" v-model="assignCap.roleID" class="vbc-input-field w-[50%]">
                                 <option value="">Select role</option>
                                 <option v-for="(role, ind) in roles" :value="role.id">{{role.name}}</option>
                             </select>
@@ -74,10 +73,9 @@
                             <input 
                                 @change="getCapInfo" 
                                 name="capCheckbox" 
-                                class="cursor-pointer"
+                                class="cursor-pointer vbc-input-field"
                                 type="checkbox" 
                                 :value="cap.id" 
-                                :class="DefaultClass.class.checkboxField"
                                 :data-cap-name="cap.name"
                                 :checked="checkedOld(cap.id)"
                             >
@@ -93,7 +91,7 @@
                 <WidgetBox title="User roles" subtitle="You can add role from here and see all bellow.">
                     <div class="add-role-form">
                         <form action="" class="flex">
-                            <input class="w-[50%]" v-model="role.name" type="text" :class="DefaultClass.class.inputField" placeholder="Role name" @keyup="roleFieldChanged">
+                            <input class="w-[50%] vbc-input-field" v-model="role.name" type="text" placeholder="Role name" @keyup="roleFieldChanged">
                             <div class="ml-2">
                                 <SLButton :disabled="(role.name) ? false : true" @click="addNewRole" text="Add role" />
                             </div>
@@ -114,7 +112,7 @@
                 <WidgetBox title="User capabilities" subtitle="You can add single capability from here and see all bellow.">
                     <div class="add-role-form">
                         <form action="" class="flex">
-                            <input class="w-[50%]" v-model="capability.name" type="text" :class="DefaultClass.class.inputField" placeholder="Capable" @keyup="capFieldChanged">
+                            <input class="w-[50%] vbc-input-field" v-model="capability.name"  placeholder="Capable" @keyup="capFieldChanged">
                             <div class="ml-2">
                                 <SLButton :disabled="(capability.name) ? false : true" @click="addNewCapable" text="Add capability" />
                             </div>
@@ -138,7 +136,6 @@
 
 <script setup>
 import WidgetBox from '../../_partials/WidgetBox.vue'
-import DefaultClass from '../../_partials/DefaultClass.vue'
 import SLButton from '../../_partials/SLButton.vue'
 import { TrashIcon , PencilSquareIcon} from '@heroicons/vue/24/solid'
 import {ref} from 'vue'

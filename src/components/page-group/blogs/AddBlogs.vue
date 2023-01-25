@@ -19,7 +19,7 @@
           <div class="-space-y-px">
             <div>
               <FieldLabel text="blog title"/>
-              <input v-model="blog.title" name="title" type="text" :class="DefaultClass.class.inputField" placeholder="blog title" />
+              <input v-model="blog.title" name="title" type="text" class="vbc-input-field" placeholder="blog title" />
             </div>
 
             <div v-if="!loading" class="pt-3">
@@ -29,7 +29,7 @@
 
             <div>
               <FieldLabel text="Blog Excerpt"/>
-              <textarea v-model="blog.excerpt" name="excerpt" cols="30" rows="10" :class="DefaultClass.class.inputField" placeholder="Blog excerpt"></textarea>
+              <textarea v-model="blog.excerpt" name="excerpt" cols="30" rows="10" class="vbc-input-field" placeholder="Blog excerpt"></textarea>
             </div>
 
           </div>
@@ -45,7 +45,7 @@
               <div class="p-3">
                   <div class="w-[60%] inline-block">
                     <div class="inline-block">
-                        <select v-model="blog.status" name="status" :class="DefaultClass.class.inputField" class="rounded-r-none">
+                        <select v-model="blog.status" name="status" class="vbc-input-field rounded-r-none">
                             <option value="publish">Publish</option>
                             <option value="draft">Draft</option>
                         </select>
@@ -72,7 +72,7 @@
                         name="catCheckbox" 
                         type="checkbox" 
                         :value="category.id" 
-                        :class="DefaultClass.class.checkboxField"
+                        class="vbc-checkbox-field"
                         :checked="checkedOld(category.id)"
                       >
 
@@ -106,7 +106,6 @@
 <script setup>
 import FieldLabel from '../../_partials/FieldLabel.vue';
 import Alert from '../../_partials/Alert.vue';
-import DefaultClass from '../../_partials/DefaultClass.vue';
 import PlaceholdImg from '../../_icons/PlaceholdImg.vue';
 import ButtonMedia from '../../_partials/ButtonMedia.vue';
 import Button from '../../_partials/Button.vue';

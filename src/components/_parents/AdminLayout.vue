@@ -11,14 +11,14 @@
                 class="flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64     bg-slate-800 p-4 transition-all duration-200 ease-in-out"
             >
                 <!-- Sidebar header -->
-                <div class="flex justify-between mb-10 pr-3 sm:px-2">
+                <div class="flex justify-between mb-2 pr-3 sm:px-2">
                     <!-- Close button -->
                     <button @click="hideSidebar" class="text-slate-500 hover:text-slate-400 lg:hidden">
-                      
                         <ArrowLeftIcon class="w-6"/>
                     </button>
 
-                    <!-- Logo -->                   
+                    <!-- Logo -->   
+                    <img width="90" src="../../assets/images/backend-logo.png" alt="">                
                 </div>
 
                 <SidebarLinks />

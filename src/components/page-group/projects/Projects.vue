@@ -23,7 +23,7 @@
                 <h3 class="mb-2 font-bold text-lg relative">{{project.title}}</h3>
                 <p class="text-sm">{{project.excerpt}}</p>
 
-                <div class="mt-3" v-if="(JSON.parse(project.ingredients)).length > 0">
+                <div class="mt-3" v-if="project.ingredients">
                     <h4 class="font-medium">Ingredients:</h4>
                     <Pill v-for="(ingredient, i) in (JSON.parse(project.ingredients))" :color="ingredient.color" :text="ingredient.text"/>
                 </div>
@@ -73,9 +73,6 @@ store.dispatch('projectLists')
         router.push({name: 'NoAccess'})
     }
 })
-
-
-
 
 function getPageProject(link){
     if (!link.url || link.active) {
