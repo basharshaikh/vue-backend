@@ -24,7 +24,7 @@
 
                     <div class="all-roles mt-4 mb-2">
                         <span v-for="(role, ind) in assignRole.roles">
-                            <span v-if="role.id" class="px-3 py-1 inline-flex mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-md inline-block">{{role.name}}</span>
+                            <span v-if="role.id" class="px-3 py-1 inline-flex mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-md ">{{role.name}}</span>
                         </span> 
 
                         <div class="mb-3"></div>
@@ -33,7 +33,7 @@
                             <input 
                                 @change="getRoleInfo" 
                                 name="roleCheckbox" 
-                                class="cursor-pointer vbc-input-field"
+                                class="cursor-pointer vbc-checkbox-field"
                                 type="checkbox" 
                                 :value="role.id" 
                                 :data-role-name="role.name"
@@ -62,7 +62,7 @@
                     <div class="all-roles mt-4 mb-2">
                         <div>
                             <span v-for="(cap, ind) in assignCap.caps">
-                                <span v-if="cap.id" class="px-3 py-1 inline-flex mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-md inline-block">{{cap.name}}</span>
+                                <span v-if="cap.id" class="px-3 py-1 inline-flex mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-md ">{{cap.name}}</span>
                             </span>                            
                         </div>
 
@@ -73,7 +73,7 @@
                             <input 
                                 @change="getCapInfo" 
                                 name="capCheckbox" 
-                                class="cursor-pointer vbc-input-field"
+                                class="cursor-pointer vbc-checkbox-field"
                                 type="checkbox" 
                                 :value="cap.id" 
                                 :data-cap-name="cap.name"
@@ -101,7 +101,7 @@
                     <div class="all-roles mt-4 mb-2">
                         <span 
                             v-for="(role, ind) in roles" 
-                            class="inline-flex px-2 py-1 mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-sm inline-block">
+                            class="inline-flex px-2 py-1 mr-2 mb-2 bg-blue-200 text-gray-800 text-sm font-medium rounded-sm">
                             <PencilSquareIcon @click="editRole({id: role.id, name: role.name})" class="w-4 mr-2 cursor-pointer text-green-900"/>{{role.name}}
                             <TrashIcon @click="deleteRole(role.id)" class="w-4 ml-2 cursor-pointer text-red-500" />
                         </span>
@@ -122,7 +122,7 @@
                     <div class="all-roles mt-4 mb-2">
                         <span 
                             v-for="(capability, ind) in capabilities" 
-                            class="inline-flex px-3 py-1 mr-2 mb-2 bg-gray-300 text-white text-gray-800 text-sm font-medium rounded-sm inline-block">
+                            class="inline-flex px-3 py-1 mr-2 mb-2 bg-gray-300 text-gray-800 text-sm font-medium rounded-sm">
                             <PencilSquareIcon @click="editCap({id: capability.id, name: capability.name})" class="w-4 mr-2 cursor-pointer text-green-900"/>
                                 {{capability.name}}
                             <TrashIcon @click="deleteCap(capability.id)" class="w-4 ml-2 cursor-pointer text-red-500" />
@@ -184,6 +184,12 @@ function assignRoles(ev){
         store.commit("notify", {
             type: 'success',
             message: res.data
+        })
+    })
+    .catch((err) => {
+        store.commit("notify", {
+            type: 'error',
+            message: err.response.data
         })
     })
 }

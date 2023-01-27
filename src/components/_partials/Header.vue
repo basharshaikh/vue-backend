@@ -39,7 +39,7 @@
                     <template v-slot:contentWrap>
                         <Button loading="true" BGcolor="#D33446" @click="logout" class="absolute right-2"  text="Logout" />
 
-                        <img class="mb-3 rounded-md" src="https://via.placeholder.com/100" alt="">
+                        <UserCircleIcon class="w-20 text-gray-300"/>
 
                         <ul class="mb-3 text-white">
                             <li><strong>Name:</strong> {{ userData.data.name }}</li>
@@ -60,7 +60,7 @@
 import { computed, ref, watch } from "vue";
 import store from "../../store";
 import HeaderPopup from "./HeaderPopup.vue";
-import { BellIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon } from "@heroicons/vue/24/solid"
+import { BellIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon, UserCircleIcon } from "@heroicons/vue/24/solid"
 import Button from "./Button.vue"
 import { useRouter } from 'vue-router'
 

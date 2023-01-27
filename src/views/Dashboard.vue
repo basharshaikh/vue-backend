@@ -6,7 +6,7 @@
     <h3 class="text-xl mb-4">Welcome <strong>{{ userMeta.data.name }}!</strong></h3>
     <div class="flex">
         <div>
-            <img class="w-[100px] mb-2" src="http://127.0.0.1:8000/storage/130/upwork-VByt.png">
+            <img class="w-[100px] mb-2" src="http://127.0.0.1:8000/storage/14/upwork-gEsG.png">
         </div>
         <div class="">
             <p class="py-2 border-0 border-b mb-2">
@@ -24,7 +24,7 @@
   <!-- Total users -->
   <div class="bg-white shadow-md p-3 text-center flex flex-col order-2 lg:order-4 rounded-md">
     <h3 class="text-3xl font-semibold">Total Users</h3>
-    <div class="text-5xl font-bold flex-1 flex items-center justify-center">20</div>
+    <div class="text-5xl font-bold flex-1 flex items-center justify-center">{{totalUser}}</div>
   </div>
 
   <!-- Project status -->
@@ -82,7 +82,11 @@ store.dispatch('projectLists')
   console.log(err)
 })
 
-
+const totalUser = ref()
+store.dispatch("totalUserCount")
+.then((res) => {
+  totalUser.value = res.data
+})
 
 // Delete the project
 function deleteProject(id){

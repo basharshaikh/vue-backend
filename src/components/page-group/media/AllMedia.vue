@@ -1,5 +1,13 @@
 <template>
-<div class="relative" >
+
+<div v-if="media.data?.length == 0">
+    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+        <p class="font-bold">Empty!</p>
+        <p>No blog available now.</p>
+    </div>
+</div>
+
+<div v-else class="relative" >
     <div v-if="!loadingMediaGrid" class="grid grid-cols-3 lg:grid-cols-8 gap-2 sm:grid-cols-3 md:grid-cols-6">
         <div v-for="(media, i) in media.data" @click="getMediaData" class="media-single-view h-[120px] bg-[#1E293B] border-[#1E293B] rounded-sm overflow-hidden bg-cover bg-no-repeat bg-center cursor-pointer" :class="(media.id == activeMediaId) ? 'border-4' : ''" :style="{ backgroundImage: 'url(' + media.media[0].original_url + ')' }" :media-data-id="media.id">
             <CheckedIcon :class="(media.id == activeMediaId) ? '' : 'hidden'" class="media-checked-icon bg-[#1E293B] p-1 rounded-br-sm inline-block"/>

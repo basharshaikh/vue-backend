@@ -31,8 +31,11 @@
                     </div>
                 </label>
             </div> 
-            <div v-if="store.state.mediaUpload.progressBar" class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-8">
-                <div class="bg-blue-600 h-2.5 rounded-full" 
+
+            <!-- Upload Progress bar -->
+            <div v-if="store.state.mediaUpload.progressBar" class="relative w-full bg-gray-300 rounded-full h-4 text-sm text-center dark:bg-gray-700 mb-8">
+                <span class="text-white -top-0.5 relative z-50">{{ store.state.mediaUpload.progress }}</span>
+                <div class="bg-green-700 h-4 rounded-full absolute top-0" 
                 :style="`width: ${store.state.mediaUpload.progress}%`"></div>
             </div>
         </form>

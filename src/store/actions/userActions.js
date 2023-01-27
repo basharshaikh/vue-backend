@@ -137,4 +137,10 @@ export default {
           return response;
         }) 
     },
+    totalUserCount(){
+      return axiosClient.get('/total-user-count')
+      .then((response) => {
+        return response;
+      }) 
+    }
 }

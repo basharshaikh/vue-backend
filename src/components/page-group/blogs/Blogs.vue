@@ -1,17 +1,16 @@
 <template>
     <div class="">
-        <div class="mb-4">
-            <h3 class="font-bold text-xl mb-2">Blog List</h3>
-            <p>You can edit or delete blog from here by click on pencil icon of trash icon</p>
-        </div>
-
-        <div v-if="blogs.data = ''">
+        <div v-if="blogs.length == 0">
             <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
                 <p class="font-bold">Empty!</p>
                 <p>No blog available now.</p>
             </div>
         </div>
         <div v-else>
+            <div class="mb-4">
+                <h3 class="font-bold text-xl mb-2">Blog List</h3>
+                <p>You can edit or delete blog from here by click on pencil icon of trash icon</p>
+            </div>
             <div v-if="!loading" class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:grid-cols-1 md:grid-cols-2">
                 <div v-for="(blog, i) in blogs" class="bg-[#FEFFE1] rounded-md overflow-hidden">
 
