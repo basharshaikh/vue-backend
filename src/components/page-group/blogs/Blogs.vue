@@ -9,13 +9,13 @@
         <div v-else>
             <div class="mb-4">
                 <h3 class="font-bold text-xl mb-2">Blog List</h3>
-                <p>You can edit or delete blog from here by click on pencil icon of trash icon</p>
+                <p>You can edit or delete blog from here by click on pencil icon or trash icon</p>
             </div>
             <div v-if="!loading" class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:grid-cols-1 md:grid-cols-2">
-                <div v-for="(blog, i) in blogs" class="bg-[#FEFFE1] rounded-md overflow-hidden">
+                <div v-for="(blog, i) in blogs" class="bg-cyan-100 rounded-md overflow-hidden">
 
                     <div v-if="blog.mediaUrl" class="relative">
-                        <img :src="blog.mediaUrl" alt="">
+                        <img class="w-full h-60 object-cover" :src="blog.mediaUrl" alt="">
                     </div>
                     <div v-else class="relative">
                         <div class=" h-[188px] bg-[#333]"></div>
@@ -23,10 +23,25 @@
 
                     <div class="project-cont p-4">
                         <h3 class="mb-2 font-bold text-md relative">{{blog.title}}</h3>
-                        <p class="text-sm">{{blog.excerpt}}</p>
+                        <div class="mb-2 flex justify-between mt-3 border-y py-2 pb-1 border-white">
+                            <p class="font-semibold flex text-cyan-900">
+                                <PencilSquareIcon class="h-4 text-cyan-600"/>
+                                <span class="text-sm relative -top-[3px] ml-1">{{ blog.author.name }}</span>
+                            </p>
+                            <p class="font-semibold flex text-cyan-900">
+                                <ClockIcon class="h-4 text-cyan-600"/>
+                                <span class="text-sm relative -top-[3px] ml-1">{{ blog.created_at }}</span>
+                            </p>
+                        </div>
+                        <p>{{blog.excerpt}}</p>
                     </div>
 
-                    <div class="border-t border-[#f1f1f1] flex justify-between p-2">
+                    <div class="px-4 pb-2">
+                        <p class="font-bold mb-1">Categories:</p>
+                        <span class="vbc-pill" v-for="(cat, ind) in blog.catsInfo">{{ cat.title }}</span>
+                    </div>
+
+                    <div class="border-t border-white flex justify-between p-2">
                         <router-link :to="`/edit-blog/${blog.id}`">
                             <EditIcon/>
                         </router-link>
@@ -50,6 +65,7 @@ import Pagination from '../../_partials/Pagination.vue';
 import InfiniteLoading from '../../_icons/InfiniteLoading.vue';
 import {ref} from 'vue'
 import store from '../../../store';
+import { PencilIcon, ClockIcon, PencilSquareIcon } from '@heroicons/vue/24/solid';
 
 //Get all blogs
 const loading = ref(true)

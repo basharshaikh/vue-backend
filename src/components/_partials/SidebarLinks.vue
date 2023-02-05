@@ -238,7 +238,10 @@
         </ul>
     </div>
     
+
 </div>
+
+
 </template>
 
 <script setup>
@@ -258,3 +261,9 @@ let activeUserManage = ref(false)
 
 
 </script>
+
+<style>
+.router-link-active {
+    @apply !text-slate-200
+} 
+</style>

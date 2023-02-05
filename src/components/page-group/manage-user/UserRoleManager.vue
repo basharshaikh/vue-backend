@@ -92,7 +92,7 @@
                     <div class="add-role-form">
                         <form action="" class="flex">
                             <input class="w-[50%] vbc-input-field" v-model="role.name" type="text" placeholder="Role name" @keyup="roleFieldChanged">
-                            <div class="ml-2">
+                            <div class="ml-2 w-[50%]">
                                 <SLButton :disabled="(role.name) ? false : true" @click="addNewRole" text="Add role" />
                             </div>
                         </form>
@@ -113,7 +113,7 @@
                     <div class="add-role-form">
                         <form action="" class="flex">
                             <input class="w-[50%] vbc-input-field" v-model="capability.name"  placeholder="Capable" @keyup="capFieldChanged">
-                            <div class="ml-2">
+                            <div class="ml-2 w-[50%]">
                                 <SLButton :disabled="(capability.name) ? false : true" @click="addNewCapable" text="Add capability" />
                             </div>
                         </form>

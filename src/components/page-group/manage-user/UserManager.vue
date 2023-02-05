@@ -5,12 +5,6 @@
 
             <div v-if="!loadUsers" class="grid grid-cols-1 lg:grid-cols-8 gap-4 sm:grid-cols-1 md:grid-cols-1">
                 <div v-for="(user, i) in Users" class="bg-blue-200 rounded-sm overflow-hidden col-span-4">
-                    <!-- <div v-if="blog.mediaUrl" class="relative">
-                        <img :src="blog.mediaUrl" alt="">
-                    </div> -->
-                    <!-- <div v-else class="relative">
-                        <div class=" h-[188px] bg-[#333]"></div>
-                    </div> -->
 
                     <div class="project-cont p-4">
                         <h3 class="mb-2 font-bold text-md relative">{{user.name}}</h3>

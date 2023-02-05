@@ -28,7 +28,10 @@
               <textarea v-model="cat.description" name="description" cols="30" rows="10" class="vbc-input-field" placeholder="Category Description"></textarea>
             </div>
 
-            <SLButton :loading="loading"/>
+            <div class="flex justify-between">
+                <SLButton :loading="loading"/>
+                <button @click="clearTheForm" class="bg-red-400 px-4 py-2 rounded-sm text-white cursor-pointer">Clear</button>
+            </div>
           </div>
         </div>      
 
@@ -40,14 +43,17 @@
             </div>
 
             <div v-if="loadCats" class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:grid-cols-1 md:grid-cols-2">
-                <div v-for="(cat, i) in cats.data" class="project-item bg-[#FEFFE1] rounded-md overflow-hidden">
+                <div v-for="(cat, i) in cats.data" class="project-item bg-slate-100 rounded-md overflow-hidden">
 
-                    <div class="project-cont p-4">
+                    <div class="project-cont p-4 pb-0">
                         <h3 class="mb-2 font-bold text-md relative">{{cat.title}}</h3>
-                        <p class="text-sm">{{cat.description}}</p>
                     </div>
 
-                    <div class="border-t border-[#f1f1f1] flex justify-between p-2">
+                    <div class="border-t border-white">
+                        <p class="text-sm p-4 pt-0" v-if="cat.description">{{cat.description}}</p>
+                    </div>
+
+                    <div class="border-t border-white flex justify-between p-2">
                         <EditIcon @click="editCategory" :data-id="cat.id"/>
                         <DeleteIcon @click="deleteCategory" :data-id="cat.id"/>
                     </div>
@@ -77,6 +83,11 @@ const cat = ref({
 })
 let loading = ref(false)
 const errors = ref({});
+
+function clearTheForm(ev){
+    ev.preventDefault()
+    cat.value = {}
+}
 
 // Get all categories
 const loadCats = ref(false)

@@ -7,7 +7,7 @@
 </div>
 
 <div v-else>
-    <div v-if="!loadProject" class="grid grid-cols-1 lg:grid-cols-4 gap-5 sm:grid-cols-1 md:grid-cols-2">
+    <div v-if="!loadProject" class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:grid-cols-1 md:grid-cols-2">
         <div v-for="(project, i) in projects.data" class="project-item bg-[#FEFFE1] rounded-md overflow-hidden">
             <div v-if="project.mediaUrl" class="project-img relative">
                 <small v-if="project.label" class="bg-[#f71c4b] text-white py-[2px] px-2 rounded inline-block mr-1 mt-[5px] absolute top-1 right-1">{{project.label}}</small>

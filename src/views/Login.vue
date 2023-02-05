@@ -88,8 +88,8 @@ function login(e){
     })
     .catch((err) => {
       loading.value = false;
-      errorMsg.value = err.response.data.message
-      
+      errorMsg.value = err.response.data.error
+      console.log(err.response.data.error)
     })
 }
 

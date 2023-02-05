@@ -25,3 +25,7 @@
 .header-popup.active ~ .header-pop-content {
     display: block;
 }
+
+.vbc-pill{
+    @apply bg-cyan-700 text-white rounded-sm inline-block mb-1 mr-1 px-2 py-1 text-sm
+}
