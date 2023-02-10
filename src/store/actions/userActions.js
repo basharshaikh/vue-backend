@@ -1,6 +1,14 @@
 import axiosClient from '../../axios'
 
 export default {
+    //get all contact re q
+    getContactReq(){
+      return axiosClient.get('/contact-form-res')
+      .then((response) => {
+        return response;
+      })  
+    },
+
     // User related
     register({ commit }, user){
         return axiosClient.post('/register', user)

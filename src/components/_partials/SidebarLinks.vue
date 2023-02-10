@@ -28,6 +28,10 @@
                             class="block text-slate-400 hover:text-slate-200 transition">
                             <span class="text-sm font-medium">Home</span>
                         </router-link>
+                        <router-link to="/contacts" 
+                            class="block text-slate-400 hover:text-slate-200 transition">
+                            <span class="text-sm font-medium">Contacts</span>
+                        </router-link>
                     </li>
                     </ul>
                 </div>

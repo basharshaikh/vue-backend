@@ -7,5 +7,5 @@ export default {
     ...userActions,
     ...blogActions,
     ...mediaActions,
-    ...projectActions
+    ...projectActions,
 }

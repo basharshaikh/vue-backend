@@ -6,7 +6,11 @@
     <h3 class="text-xl mb-4">Welcome <strong>{{ userMeta.data.name }}!</strong></h3>
     <div class="flex">
         <div>
-            <img class="w-[100px] mb-2" src="http://127.0.0.1:8000/storage/14/upwork-gEsG.png">
+            <!-- <img class="w-[100px] mb-2" src="http://127.0.0.1:8000/storage/14/upwork-gEsG.png"> -->
+            <div class="w-12 h-12 bg-cyan-800 rounded-full text-white text-center flex items-center justify-center mt-3 mr-2 uppercase">
+              {{ userMeta.data.name.substring(0, 2) }}
+            </div>
+
         </div>
         <div class="">
             <p class="py-2 border-0 border-b mb-2">
@@ -29,7 +33,7 @@
 
   <!-- Project status -->
   <div class="bg-slate-100 shadow-md p-4 row-span-2 order-3 lg:order-1 rounded-md">
-    <h3 class="text-2xl font-bold mb-4">Project Status:</h3>
+    <h3 class="text-2xl font-bold mb-4">Projects Status:</h3>
     <chartBar />
   </div>
 

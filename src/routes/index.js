@@ -8,6 +8,7 @@ import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 
 //
+import ContactRequest from '../components/page-group/contact/ContactRequest.vue'
 import Projects from '../components/page-group/projects/Projects.vue'
 import Blogs from '../components/page-group/blogs/Blogs.vue'
 import AddBlogs from '../components/page-group/blogs/AddBlogs.vue'
@@ -61,6 +62,11 @@ const routes = [
                 path: '/dashboard',
                 name: 'Dashboard',
                 component: Dashboard
+            },
+            {
+                path: '/contacts',
+                name: 'ContactRequest',
+                component: ContactRequest
             },
             {
                 path: '/all-projects',
