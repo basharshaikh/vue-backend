@@ -294,6 +294,13 @@ function addNewCapable(ev){
         message: res.data
       })
     })
+    .catch(err => {
+      store.commit('notify', {
+        type: 'error',
+        message: err.response.data
+      })
+    })
+
     store.dispatch("AllCapabilities")
     .then((res) => {
         capabilities.value = res.data
@@ -321,6 +328,12 @@ function deleteCap(id){
             store.dispatch("AllCapabilities")
             .then((res) => {
                 capabilities.value = res.data
+            })
+        })
+        .catch(err => {
+            store.commit('notify', {
+                type: 'error',
+                message: err.response.data
             })
         })
     }
@@ -361,6 +374,12 @@ function deleteRole(id){
                 roles.value = res.data
             })
         })
+        .catch(err => {
+            store.commit('notify', {
+                type: 'error',
+                message: err.response.data
+            })
+        })
     }
 }
 
@@ -378,6 +397,14 @@ function addNewRole(ev){
         message: res.data
       })
     })
+    .catch(err => {
+      store.commit('notify', {
+        type: 'error',
+        message: err.response.data
+      })
+    })
+
+
     store.dispatch("AllRoles")
     .then((res) => {
         roles.value = res.data

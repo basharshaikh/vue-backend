@@ -120,6 +120,12 @@ function addCategory(ev){
         if(err.response.status === 422){
             errors.value = err.response.data.errors
         }
+        if(err.response.status === 403){
+            store.commit('notify', {
+                type: 'error',
+                message: err.response.data
+            })
+        }
     })
 }
 

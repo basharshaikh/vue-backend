@@ -160,7 +160,12 @@ function deleteMedia(id){
             })
         })
         .catch((err) => {
-            console.log(err)
+            if(err.response.status === 403){
+                store.commit('notify', {
+                    type: 'error',
+                    message: err.response.data
+                })
+            }
         })
     }
 }

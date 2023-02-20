@@ -35,6 +35,16 @@
               <textarea v-model="project.excerpt" cols="30" rows="10" class="vbc-input-field" placeholder="Proejct excerpt"></textarea>
             </div>
 
+            <div>
+              <FieldLabel text="Project Video Overview url" />
+              <input v-model="project.video_overview" type="text" class="vbc-input-field" placeholder="Paste embed code url" />
+            </div>
+
+            <div>
+              <FieldLabel text="Project live url" />
+              <input v-model="project.live_url" type="text" class="vbc-input-field" placeholder="Project live url" />
+            </div>
+
             <div  class="pt-3">
               <FieldLabel text="Project Label" />
               <input v-model="project.label" type="text" class="vbc-input-field"  placeholder="Proejct label" />
@@ -154,7 +164,9 @@ const project = ref({
     label: '',
     status: 'publish',
     excerpt: '',
-    ingredients: []
+    ingredients: [],
+    video_overview: '',
+    live_url: ''
 })
 
 const mediaInfo = computed(() => store.state.mediaLibrary);

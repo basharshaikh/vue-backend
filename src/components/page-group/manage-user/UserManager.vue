@@ -112,6 +112,12 @@ function deleteUser(id){
                 Users.value = res.data
             }) 
         })
+        .catch((err) => {
+            store.commit('notify', {
+                type: 'error',
+                message: err.response.data
+            })
+        })
     }
 }
 
