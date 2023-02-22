@@ -11,6 +11,8 @@ export default {
           }
         })
         .then((response) => {
+          console.log(MediaFiles)
+          console.log('MediaFiles')
           commit("uploadSuccess", true)
           commit("uploadProgress", {progress: 0, progressBar: false})
           return response;
