@@ -67,9 +67,7 @@ export default {
         })
     },
     getCurrentUser(){
-      return axiosClient.get(`/current-user`, {
-        withCredentials: true
-      })
+      return axiosClient.get(`/current-user`)
       .then((response) => {
         return response;
       })
