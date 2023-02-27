@@ -1,6 +1,14 @@
 import axiosClient from '../../axios'
 
 export default {
+    //
+    authChecker(){
+      return axiosClient.get('/auth-check')
+      .then((response) => {
+        return response;
+      })
+    },
+
     //get all contact re q
     getContactReq(){
       return axiosClient.get('/contact-form-res')
@@ -59,7 +67,9 @@ export default {
         })
     },
     getCurrentUser(){
-      return axiosClient.get(`/current-user`)
+      return axiosClient.get(`/current-user`, {
+        withCredentials: true
+      })
       .then((response) => {
         return response;
       })

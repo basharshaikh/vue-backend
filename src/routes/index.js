@@ -21,7 +21,7 @@ import UserManager from '../components/page-group/manage-user/UserManager.vue'
 import UserRoleManager from '../components/page-group/manage-user/UserRoleManager.vue'
 
 import NoAccess from '../views/NoAccess.vue'
-
+import AuthCheck from '../views/AuthCheck.vue'
 
 
 import store from '../store'
@@ -124,6 +124,11 @@ const routes = [
                 component: UserRoleManager
             },
         ]
+    },
+    {
+        path: '/auth-check',
+        name: 'AuthCheck',
+        component: AuthCheck
     },
 ];
 
