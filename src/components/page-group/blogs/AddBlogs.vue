@@ -24,7 +24,7 @@
 
             <div v-if="!loading" class="pt-3">
               <FieldLabel text="Blog Description"/>
-              <QuillEditor v-model:content="blog.description" toolbar="full" style="height:200px;" class="mb-3 rounded-sm" />
+              <QuillEditor v-model:content="blog.description" toolbar="full" style="height:200px; font-size: 16px;" class="mb-3 rounded-sm" />
             </div>
 
             <div>

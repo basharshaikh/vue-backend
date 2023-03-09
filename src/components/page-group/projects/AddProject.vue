@@ -27,7 +27,7 @@
 
             <div class="pt-3" v-if="!loading">
               <FieldLabel text="Project Description" />
-              <QuillEditor v-model:content="project.description" toolbar="full" style="height:500px;" class="mb-3" />
+              <QuillEditor v-model:content="project.description" toolbar="full" style="height:500px; font-size: 16px;" class="mb-3" />
             </div>
     
             <div class="pt-3">              

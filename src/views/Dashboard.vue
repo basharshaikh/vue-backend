@@ -75,6 +75,8 @@ import chartBar from '../components/_partials/chartBar.vue';
 import LinkOpen from '../components/_icons/LinkOpen.vue';
 import Pill from '../components/_partials/Pill.vue';
 import DeleteIcon from '../components/_icons/DeleteIcon.vue';
+import axiosClient from '../axios';
+import axios from 'axios';
 
 const userMeta = computed(() => store.state.userData);
 const projects = ref({})
@@ -108,6 +110,7 @@ function deleteProject(id){
     })
   }
 }
+
 
 
 
